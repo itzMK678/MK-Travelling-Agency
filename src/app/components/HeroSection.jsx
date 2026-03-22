@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section className="h-screen  bg-black flex items-end justify-center relative">
+    <section className="h-screen w-full bg-black flex items-end justify-center relative">
       
       {/* Background Image */}
       <Image
@@ -16,13 +16,13 @@ const HeroSection = () => {
       />
 
       
-     <div className="relative z-10 text-white mb-10">
+    <div className="absolute bottom-10 left-5 z-10 text-white">
   
   <div className="flex items-end gap-3">
-    <p className="text-[120px] md:text-[150px] font-extrabold leading-none">
+    <p className="text-[150px] md:text-[150px] font-extrabold leading-none">
       MK
     </p>
-    <p className="text-[40px] md:text-[60px] font-bold ">
+    <p className="text-[150px] md:text-[60px] font-bold">
       Tours
     </p>
   </div>

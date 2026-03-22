@@ -1,24 +1,27 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 const Header = () => {
   return (
-     <header className=" bg-red-500 text-blue-500 mt-5 mx-5 px-8 py-4 flex justify-between items-center">
-      
-      <div className="text-2xl font-bold">
-        <Image src="/logo.png" alt="Logo" width={150} height={150} />
-      </div>
+ <header className="w-full bg-white rounded-2xl text-blue-500 px-8 py-4 flex justify-between items-center shadow-md">
+  
+  <Image
+    src="/logo.png"
+    alt="Logo"
+    width={130}
+    height={130}
+    className="h-auto w-fit"
+  />
 
-      {/* CENTER: Empty spa
+  <nav className="flex gap-8 text-sm font-medium">
+   
+    <Link href="/" className='text-[#223553] font-light text-[18px] hover:font-semibold'>Home</Link>
+    <Link href="" className='text-[#223553] font-light text-[18px] hover:font-semibold'>About</Link>
+    <Link href="" className='text-[#223553] font-light text-[18px] hover:font-semibold'>Services</Link>
+    <Link href="" className='text-[#223553] font-light text-[18px] hover:font-semibold'>Contact</Link>
+  </nav>
 
-      {/* RIGHT: Menu */}
-      <nav className="flex gap-8 text-sm font-medium">
-        <a href="#" className="hover:text-purple-400 transition">Home</a>
-        <a href="#" className="hover:text-purple-400 transition">About</a>
-        <a href="#" className="hover:text-purple-400 transition">Services</a>
-        <a href="#" className="hover:text-purple-400 transition">Contact</a>
-      </nav>
-
-    </header>
+</header>
   )
 }
 
