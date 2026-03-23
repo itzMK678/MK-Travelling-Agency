@@ -8,6 +8,7 @@ import Box from "./components/Box";
 import AllPacks from "./Pages/AllPacks";
 import FAQs from "./Pages/FAQs";
 import DetailPage from "./Pages/DetailPage";
+import Blog from "./Pages/Blog";
 
 export default function Home() {
   return (
@@ -25,7 +26,9 @@ export default function Home() {
     <CustomPack/>
     <Box/>
     <AllPacks/>
+      <Blog/>
     <FAQs/>
+  
     <Footer/>
     <DetailPage/>
     </>
