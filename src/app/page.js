@@ -5,6 +5,9 @@ import Favtpack from "./Pages/Favtpack";
 import CustomPack from "./Pages/CustomPack";
 import Footer from "./components/Footer";
 import Box from "./components/Box";
+import AllPacks from "./Pages/AllPacks";
+import FAQs from "./Pages/FAQs";
+import DetailPage from "./Pages/DetailPage";
 
 export default function Home() {
   return (
@@ -21,7 +24,10 @@ export default function Home() {
     <Favtpack />
     <CustomPack/>
     <Box/>
+    <AllPacks/>
+    <FAQs/>
     <Footer/>
+    <DetailPage/>
     </>
   );
 }

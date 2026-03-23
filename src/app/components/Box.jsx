@@ -1,17 +1,27 @@
-import React from 'react'
-data=['5+year exp','TrINED ','EXPERIENCED ','ENJOY ']
-const  Box = () => {
+import React from 'react';
+
+const data = ['5+ Year Exp', 'Trained', 'Experienced', 'Enjoy'];
+
+const Box = () => {
   return (
-  <div className="text-center p-4 m-4 
-  bg-transparent 
-  backdrop-blur-lg 
-  border border-white/30
-  rounded-2xl 
-  font-semibold text-[26px] 
-">
-  [{data.join(', ')}]
-</div>
-  )
-}
+  <div className='flex flex-wrap justify-center gap-4 p-8 m-4 '>
+      {data.map((item, index) => (
+        <span 
+          key={index} 
+          className="px-4 py-2bg-gradient-to-b from-white/20 to-white/5 rounded-full text-black font-semibold text-[18px] uppercase "
+        >
+          
+    <div className="flex flex-wrap justify-center gap-4 p-8 m-4 
+                    bg-black/5 backdrop-blur-lg 
+                   rounded-xl 
+                    ">
+          {item.trim()}
+           </div>
+        </span>
+      ))}
+   
+        </div>
+  );
+};
 
 export default Box;
