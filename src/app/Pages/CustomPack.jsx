@@ -17,10 +17,10 @@ const CustomPack = () => {
       {/* CENTER IMAGE CARD */}
       <div className="flex-1 rounded-2xl overflow-hidden relative">
         <Image
-          src="/Nature1.jpg"
-          alt="collection"
-          width={10} height={25}
-          className="w-full h-full object-cover"
+           src="/Nature1.jpg"
+    alt="Location Image"
+    fill
+    className="object-cover"
         />
       </div>
 

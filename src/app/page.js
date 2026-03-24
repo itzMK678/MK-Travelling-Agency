@@ -9,6 +9,8 @@ import AllPacks from "./Pages/AllPacks";
 import FAQs from "./Pages/FAQs";
 import DetailPage from "./Pages/DetailPage";
 import Blog from "./Pages/Blog";
+import Gallery from "./Pages/Gallery";
+import ContactPage from "./Pages/Contact";
 
 export default function Home() {
   return (
@@ -31,6 +33,8 @@ export default function Home() {
   
     <Footer/>
     <DetailPage/>
+    <Gallery/>
+    <ContactPage/>
     </>
   );
 }
