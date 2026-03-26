@@ -11,6 +11,7 @@ import DetailPage from "./Pages/DetailPage";
 import Blog from "./Pages/Blog";
 import Gallery from "./Pages/Gallery";
 import ContactPage from "./Pages/Contact";
+import InstantBox from "./components/InstantBox";
 
 export default function Home() {
   return (
@@ -35,6 +36,7 @@ export default function Home() {
     <DetailPage/>
     <Gallery/>
     <ContactPage/>
+    <InstantBox/>
     </>
   );
 }
