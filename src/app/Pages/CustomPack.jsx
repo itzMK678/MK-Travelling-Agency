@@ -5,11 +5,15 @@ import Image from "next/image";
 const CustomPack = () => {
   return (
     <div>
-    <div className=" m-5 rounded-2xl flex flex-col md:flex-row gap-3 p-6 bg-gradient-to-br from-white  via-[#f2fffe] to-[white]">
+    <div className=" m-5 rounded-2xl flex flex-col md:flex-row gap-3 py-20 p-6 bg-gradient-to-br from-white  via-[#f2fffe] to-[white]">
 
       {/* LEFT CARD */}
-      <div className="bg-[#e9eeee] rounded-2xl p-6 flex-1 flex items-center">
-        <h2 className="text-2xl font-serif text-gray-800 leading-snug">
+      <div className="bg-[#e9eeee] rounded-2xl p-6 flex-1 flex flex-coulmn items-center">
+         <h3 className=" text-[42px] dynapuff  font-semibold text-gray-800">you</h3>
+          <h5 className=" text-[25px] dynapuff font-semibold text-gray-800">
+            can
+          </h5>
+        <h2 className="text-[42px]  dynapuff text-gray-800 leading-snug">
          Customize Trip
         </h2>
       </div>
@@ -27,6 +31,7 @@ const CustomPack = () => {
       {/* RIGHT CARD */}
       <div className="bg-gradient-to-b from-[#cfe0df]  to-[#d3efed] rounded-2xl p-6 flex-1 flex flex-col justify-between">
         <div>
+         
           <h3 className="text-xl font-semibold text-gray-800">
             Customize your Trip
           </h3>

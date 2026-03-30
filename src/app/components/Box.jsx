@@ -1,26 +1,43 @@
-import React from 'react';
+"use client";
+import React from "react";
 
-const data = ['5+ Year Exp', 'Trained', 'Experienced', 'Enjoy'];
+const data = ["Experience", "Trained", "Trusted", "Affordable"];
+
+// Colors + hover colors
+const colors = [
+  "bg-[#BDA6CE] hover:bg-[#a58db8]",
+  "bg-[#9B8EC7] hover:bg-[#7f73b3]",
+  "bg-[#F891BB] hover:bg-[#e06fa2]",
+  "bg-[#C9BEFF] hover:bg-[#a99ee6]",
+];
 
 const Box = () => {
   return (
-  <div className='flex flex-wrap justify-center gap-4 p-8 m-4 '>
-      {data.map((item, index) => (
-        <span 
-          key={index} 
-          className="px-4 py-2bg-gradient-to-b from-white/20 to-white/5 rounded-full text-black font-semibold text-[18px] uppercase "
-        >
-          
-    <div className="flex flex-wrap justify-center gap-4 p-8 m-4 
-                    bg-black/5 backdrop-blur-lg 
-                   rounded-xl 
-                    ">
-          {item.trim()}
-           </div>
-        </span>
-      ))}
-   
-        </div>
+    <div className="w-full py-10">
+      {/* Heading */}
+      <h1 className="font-extrabold text-[42px] text-center capitalize">
+        Why Us
+      </h1>
+
+      {/* Boxes */}
+      <div className="flex flex-wrap justify-center gap-6 p-8">
+        {data.map((item, index) => (
+          <div
+            key={index}
+            className={`
+              ${colors[index % colors.length]}
+              px-8 py-5 rounded-xl
+              text-black font-semibold text-[18px] uppercase
+              transition-all duration-300 ease-in-out
+              hover:scale-105 hover:shadow-lg
+              cursor-pointer
+            `}
+          >
+            {item}
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 

@@ -29,12 +29,12 @@ const Favtpack = () => {
 
 
   return (
-    <div className='py-5 pb-10' >
+    <div className='py-15 pb-10' >
     <div className='m-4 text-center'>
     <h1 className='text-[45px] font-bold'>Our Best Offers </h1>
     <p  className='text-[15px] font-normal'>there are some of our most popular destinations in different seasons . Where most of people like to go in specific seaosn</p>
    </div>
-    <div className='flex flex-wrap gap-3 justify-center gap-10'>
+    <div className='flex flex-wrap gap-5 justify-center '>
       {places.map((place) => (
         <PlaceCard key={place.id} place={place} />
       ))}
