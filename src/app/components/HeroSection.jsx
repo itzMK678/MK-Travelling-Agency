@@ -19,16 +19,16 @@ const HeroSection = () => {
     <div className="absolute bottom-10 left-5 z-10 text-white">
   
   <div className="flex items-end gap-3">
-    <p className="text-[150px] md:text-[150px] font-extrabold leading-none">
+    <p className="text-[1100px] md:text-[150px] font-extrabold leading-none">
       MK
     </p>
-    <p className="text-[150px] md:text-[60px] font-bold">
+    <p className="text-[40px] md:text-[60px] font-bold">
       Tours
     </p>
   </div>
 
   <p className="text-sm md:text-lg mt-2">
-    Discover amazing places with us
+    Explore the world with us. Unforgettable Journeys, Personalized Experiences, and Lot of Fun 
   </p>
 
 </div>

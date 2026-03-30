@@ -15,10 +15,11 @@ const Header = () => {
 
   <nav className="flex gap-8 text-sm font-medium">
    
-    <Link href="/" className='text-[#223553] font-light text-[18px] hover:font-semibold'>Home</Link>
-    <Link href="" className='text-[#223553] font-light text-[18px] hover:font-semibold'>About</Link>
-    <Link href="" className='text-[#223553] font-light text-[18px] hover:font-semibold'>Services</Link>
-    <Link href="" className='text-[#223553] font-light text-[18px] hover:font-semibold'>Contact</Link>
+    <Link href="/" className='text-[#223553] font-light p-2 text-[18px] hover:font-semibold'>Home</Link>
+   <Link href="" className='text-[#223553] font-light  p-2 text-[18px] hover:font-semibold'>Packages</Link>
+      <Link href="" className='text-[#223553] font-light p-2 text-[18px] hover:font-semibold'>about</Link>
+    <Link href="" className='text-[#223553] font-light p-2 text-[18px] hover:font-semibold'>Contact</Link>
+     <Link href="" className='bg-[#223553] text-white p-2 rounded-[8px] font-light text-[18px] hover:font-semibold'>Book</Link>
   </nav>
 
 </header>
