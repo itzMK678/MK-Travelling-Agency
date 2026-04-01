@@ -1,39 +1,72 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 
 const data = ["Experience", "Trained", "Trusted", "Affordable"];
 
-// Colors + hover colors
+const clicked = [
+  "5+ years of experience",
+  "Trained by experts and well known in the area",
+  "Trusted by thousands of clients",
+  "Most affordable prices",
+];
+
 const colors = [
-  "bg-[#BDA6CE] hover:bg-[#a58db8]",
-  "bg-[#9B8EC7] hover:bg-[#7f73b3]",
-  "bg-[#F891BB] hover:bg-[#e06fa2]",
-  "bg-[#C9BEFF] hover:bg-[#a99ee6]",
+  "bg-[#BDA6CE]",
+  "bg-[#9B8EC7]",
+  "bg-[#F891BB]",
+  "bg-[#C9BEFF]",
 ];
 
 const Box = () => {
+  const [flippedIndex, setFlippedIndex] = useState(null);
+
+  const handleFlip = (index) => {
+    setFlippedIndex(flippedIndex === index ? null : index);
+  };
+
   return (
     <div className="w-full py-10">
-      {/* Heading */}
       <h1 className="font-extrabold text-[42px] text-center capitalize">
         Why Us
       </h1>
 
-      {/* Boxes */}
       <div className="flex flex-wrap justify-center gap-6 p-8">
         {data.map((item, index) => (
           <div
             key={index}
-            className={`
-              ${colors[index % colors.length]}
-              px-8 py-5 rounded-xl
-              text-black font-semibold text-[18px] uppercase
-              transition-all duration-300 ease-in-out
-              hover:scale-105 hover:shadow-lg
-              cursor-pointer
-            `}
+            className="w-[220px] h-[120px] perspective"
+            onClick={() => handleFlip(index)}
           >
-            {item}
+            <div
+              className={`
+                relative w-full h-full duration-500 transform-style preserve-3d
+                ${flippedIndex === index ? "rotate-y-180" : ""}
+              `}
+            >
+              {/* Front */}
+              <div
+                className={`
+                  absolute w-full h-full rounded-xl flex items-center justify-center
+                  text-black font-semibold text-[18px] uppercase
+                  ${colors[index % colors.length]}
+                  backface-hidden
+                `}
+              >
+                {item}
+              </div>
+
+              {/* Back */}
+              <div
+                className={`
+                  absolute w-full h-full rounded-xl flex items-center justify-center
+                  text-black text-center px-3
+                  ${colors[index % colors.length]}
+                  rotate-y-180 backface-hidden
+                `}
+              >
+                {clicked[index]}
+              </div>
+            </div>
           </div>
         ))}
       </div>

@@ -11,10 +11,10 @@ const Blog = () => {
      <div className="bg-gradient-to-b from-[#cfe0df]  to-[#d3efed] rounded-2xl p-6 flex-1 flex flex-col justify-between">
         <div>
           <h3 className="text-xl font-semibold text-gray-800">
-            Customize your Trip
+            Blog your experience 
           </h3>
           <p className="text-sm text-gray-600 mt-2">
-            Customzize your trip according to your preferences and needs. Choose from a wide range of destinations, activities, and accommodations to create a personalized travel experience that suits your style and budget.
+            Share your travel stories and insights with our community. Discover new places and get inspired by the experiences of fellow travelers.
           </p>
         </div>
 
@@ -36,9 +36,10 @@ const Blog = () => {
       {/* RIGHT CARD */}
       
  <div className="bg-[#e9eeee] rounded-2xl p-6 flex-1 flex items-center">
-        <h2 className="text-2xl font-serif text-gray-800 leading-snug">
-         Customize Trip
+        <h2 className="text-[42px]  dynapuff text-gray-800 leading-snug">
+         Blog 
         </h2>
+        <p className="text-[22px]  dynapuff ">your experience</p>
       </div>
     </div>
     </div>
