@@ -4,8 +4,8 @@ import Image from "next/image";
 
 const Blog = () => {
   return (
-    <div>
-    <div className=" m-5 rounded-2xl flex flex-col md:flex-row gap-3 p-6 bg-gradient-to-bl from-white  via-[#f2fffe] to-[white]">
+    <div className=" m-5">
+    <div className="  rounded-2xl flex flex-col md:flex-row gap-3 p-6 bg-gradient-to-b from-[#cfe0df]  to-[#d3efed] ">
 
       {/* LEFT CARD */}
      <div className="bg-gradient-to-b from-[#cfe0df]  to-[#d3efed] rounded-2xl p-6 flex-1 flex flex-col justify-between">

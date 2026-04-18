@@ -4,8 +4,8 @@ import Image from "next/image";
 
 const CustomPack = () => {
   return (
-    <div>
-    <div className=" m-5 rounded-2xl flex flex-col md:flex-row gap-3 py-20 p-6 bg-gradient-to-br from-white  via-[#f2fffe] to-[white]">
+    <div className=" m-5">
+    <div className="  rounded-2xl flex flex-col md:flex-row gap-3  p-6 bg-[#e9eeee]">
 
       {/* LEFT CARD */}
       <div className="bg-[#e9eeee] rounded-2xl p-6 flex-1 flex flex-coulmn items-center">

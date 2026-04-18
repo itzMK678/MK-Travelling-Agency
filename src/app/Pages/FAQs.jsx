@@ -8,53 +8,67 @@ const FAQs = () => {
   const faqs = [
     {
       question: "What services do you offer?",
-      answer: "We offer travel packages, hotel bookings, and guided tours.",
+      answer:
+        "We offer travel packages, hotel bookings, and guided tours.",
     },
     {
       question: "How can I book a trip?",
-      answer: "You can book directly from our website or contact our support team.",
+      answer:
+        "You can book directly from our website or contact our support team.",
     },
     {
       question: "Do you offer refunds?",
-      answer: "Yes, refunds are available based on our cancellation policy.",
+      answer:
+        "Yes, refunds are available based on our cancellation policy.",
     },
     {
       question: "Are your packages customizable?",
-      answer: "Yes, you can customize packages according to your needs.",
+      answer:
+        "Yes, you can customize packages according to your needs.",
     },
   ];
 
   const toggleFAQ = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
+    setActiveIndex((prev) => (prev === index ? null : index));
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6">
-      
-      <h1 className="text-3xl font-bold text-center mb-6">FAQs</h1>
+    <div className=" w-full mx-auto p-6">
+      <h1 className=" text-black text-3xl font-bold text-center mb-6 py-2 rounded-lg">
+        FAQs
+      </h1>
 
-      {faqs.map((faq, index) => (
-        <div
-          key={index}
-          className="mb-4 border border-gray-300 rounded-xl p-4 cursor-pointer transition-all duration-300"
-          onClick={() => toggleFAQ(index)}
-        >
-          {/* Question */}
-          <h2 className="font-semibold text-lg flex justify-between">
-            {faq.question}
-            <span>{activeIndex === index ? "-" : "+"}</span>
-          </h2>
+      {faqs.map((faq, index) => {
+        const isActive = activeIndex === index;
 
-          {/* Answer */}
-          <p
-            className={`mt-2 text-gray-600 transition-all duration-300 ${
-              activeIndex === index ? "block" : "hidden"
-            }`}
+        return (
+          <div
+            key={index}
+            className="mb-4 border border-gray-300 rounded-xl p-4 cursor-pointer transition-all duration-300 bg-white"
+            onClick={() => toggleFAQ(index)}
           >
-            {faq.answer}
-          </p>
-        </div>
-      ))}
+            {/* Question */}
+            <div className="flex justify-between items-center">
+              <h2 className="font-semibold text-lg">
+                {faq.question}
+              </h2>
+
+              <span className="text-xl font-bold">
+                {isActive ? "−" : "+"}
+              </span>
+            </div>
+
+            {/* Answer (animated) */}
+            <div
+              className={`overflow-hidden transition-all duration-300 ${
+                isActive ? "max-h-40 mt-2 opacity-100" : "max-h-0 opacity-0"
+              }`}
+            >
+              <p className="text-gray-600">{faq.answer}</p>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };
