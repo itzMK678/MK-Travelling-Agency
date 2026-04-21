@@ -28,14 +28,16 @@ export default function Home() {
     <Favtpack />
     <CustomPack/>
     <Box/>
+    <Blog/>
     <AllPacks/>
-      <Blog/>
+    <Gallery/>
+      
     <FAQs/>
-  
+  <ContactPage/>
     <Footer/>
     <DetailPage/>
-    <Gallery/>
-    <ContactPage/>
+    
+    
     <InstantBox/>
     </>
   );

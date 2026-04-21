@@ -5,12 +5,12 @@ import Image from "next/image";
 const Blog = () => {
   return (
     <div className=" m-5">
-    <div className="  rounded-2xl flex flex-col md:flex-row gap-3 p-6 bg-gradient-to-b from-[#cfe0df]  to-[#d3efed] ">
+    <div className="  rounded-2xl flex flex-col md:flex-row gap-3 p-6  bg-[#D0E3E1] ">
 
       {/* LEFT CARD */}
-     <div className="bg-gradient-to-b from-[#cfe0df]  to-[#d3efed] rounded-2xl p-6 flex-1 flex flex-col justify-between">
+     <div className="bg-[#A7C7C5] rounded-2xl p-6 flex-1 flex flex-col justify-between">
         <div>
-          <h3 className="text-xl font-semibold text-gray-800">
+          <h3 className="text-xl font-semibold text-gray-600">
             Blog your experience 
           </h3>
           <p className="text-sm text-gray-600 mt-2">
@@ -18,7 +18,7 @@ const Blog = () => {
           </p>
         </div>
 
-        <button className="mt-4 bg-black text-white px-4 py-2 rounded-full w-fit hover:bg-gray-800 transition">
+        <button className="mt-4 bg-gray-600 text-white px-4 py-2 rounded-full w-fit hover:bg-gray-800 transition">
           Explore Now
         </button>
       </div>
@@ -35,11 +35,11 @@ const Blog = () => {
 
       {/* RIGHT CARD */}
       
- <div className="bg-[#e9eeee] rounded-2xl p-6 flex-1 flex items-center">
-        <h2 className="text-[42px]  dynapuff text-gray-800 leading-snug">
+ <div className=" bg-[#D0E3E1] rounded-2xl p-6 flex-1 flex items-center">
+        <h2 className="text-[42px]  dynapuff text-gray-600 leading-snug">
          Blog 
         </h2>
-        <p className="text-[22px]  dynapuff ">your experience</p>
+        <p className="text-[22px]  dynapuff text-gray-600 ">your experience</p>
       </div>
     </div>
     </div>

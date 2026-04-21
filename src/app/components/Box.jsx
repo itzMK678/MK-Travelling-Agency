@@ -11,10 +11,10 @@ const clicked = [
 ];
 
 const colors = [
-  "bg-[#BDA6CE]",
-  "bg-[#9B8EC7]",
-  "bg-[#F891BB]",
-  "bg-[#C9BEFF]",
+  "bg-[#CFE5E4]",
+  "bg-[#7FA8A6]",
+  "bg-[#9FB8AD]",
+  "bg-[#E3ECE8]",
 ];
 
 const Box = () => {
@@ -34,7 +34,7 @@ const Box = () => {
         {data.map((item, index) => (
           <div
             key={index}
-            className="w-[220px] h-[120px] perspective"
+            className="cursor-pointer w-[220px] h-[120px] perspective"
             onClick={() => handleFlip(index)}
           >
             <div
@@ -46,7 +46,7 @@ const Box = () => {
               {/* Front */}
               <div
                 className={`
-                  absolute w-full h-full rounded-xl flex items-center justify-center
+                  absolute w-full border border-[#9FB8AD]  h-full rounded-xl flex items-center justify-center
                   text-black font-semibold text-[18px] uppercase
                   ${colors[index % colors.length]}
                   backface-hidden
