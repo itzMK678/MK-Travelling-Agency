@@ -1,29 +1,56 @@
-import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+
 const Header = () => {
+  const linkStyle =
+    "relative text-[#223553] font-light p-2 text-[18px] transition-all duration-300 ease-in-out hover:text-[#1a2a44] hover:scale-105";
+
   return (
- <header className="w-full bg-white rounded-2xl text-blue-500 px-8 py-4 flex justify-between items-center shadow-md">
-  
-  <Image
-    src="/logo.png"
-    alt="Logo"
-    width={130}
-    height={130}
-    className="h-auto w-fit"
-  />
+    <header className="w-full bg-white rounded-2xl px-8 py-4 flex justify-between items-center shadow-md">
 
-  <nav className="flex gap-8 text-sm font-medium">
-   
-    <Link href="/" className='text-[#223553] font-light p-2 text-[18px] hover:font-semibold'>Home</Link>
-   <Link href="" className='text-[#223553] font-light  p-2 text-[18px] hover:font-semibold'>Packages</Link>
-      <Link href="" className='text-[#223553] font-light p-2 text-[18px] hover:font-semibold'>about</Link>
-    <Link href="" className='text-[#223553] font-light p-2 text-[18px] hover:font-semibold'>Contact</Link>
-     <Link href="" className='bg-[#223553] text-white p-2 rounded-[8px] font-light text-[18px] hover:font-semibold'>Book</Link>
-  </nav>
+      {/* Logo */}
+      <Image
+        src="/logo.png"
+        alt="Logo"
+        width={130}
+        height={130}
+        className="h-auto w-fit"
+      />
 
-</header>
-  )
-}
+      {/* Navigation */}
+      <nav className="flex gap-8 text-sm font-medium items-center">
 
-export default Header
+        <Link href="/" className={linkStyle}>
+          Home
+        </Link>
+
+        <Link href="/packages" className={linkStyle}>
+          Packages
+        </Link>
+
+        <Link href="/about" className={linkStyle}>
+          About
+        </Link>
+
+        <Link href="/contact" className={linkStyle}>
+          Contact
+        </Link>
+
+        {/* CTA Button */}
+        <Link
+          href="/book"
+          className="bg-[#223553] text-white px-4 py-2 rounded-[8px]
+          font-light text-[18px]
+          transition-all duration-300 ease-in-out
+          hover:scale-105 hover:bg-[#1a2a44]"
+        >
+          Book
+        </Link>
+
+      </nav>
+    </header>
+  );
+};
+
+export default Header;

@@ -38,7 +38,7 @@ const InstantBox = () => {
         onSubmit={handleSubmit}
         className="w-[320px] bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-xl"
       >
-        <h2 className="text-xl font-semibold text-center mb-4 text-white">
+        <h2 className="text-xl font-semibold text-center mb-4 text-black">
           Instant Booking
         </h2>
 
@@ -49,7 +49,7 @@ const InstantBox = () => {
           placeholder="Enter Name"
           value={formData.name}
           onChange={handleChange}
-          className="w-full mb-3 px-3 py-2 rounded-lg bg-transparent border border-gray-300 text-white outline-none"
+          className="w-full mb-3 px-3 py-2 rounded-lg bg-transparent border  border-gray-300 text-black outline-none"
         />
 
         {/* CNIC */}
@@ -59,7 +59,7 @@ const InstantBox = () => {
           placeholder="Enter CNIC"
           value={formData.cnic}
           onChange={handleChange}
-          className="w-full mb-3 px-3 py-2 rounded-lg bg-transparent border border-gray-300 text-white outline-none"
+          className="w-full mb-3 px-3 py-2 rounded-lg bg-transparent border border-gray-300 text-black outline-none"
         />
 
         {/* Persons */}
@@ -69,7 +69,7 @@ const InstantBox = () => {
           placeholder="Enter Number of Persons"
           value={formData.persons}
           onChange={handleChange}
-          className="w-full mb-3 px-3 py-2 rounded-lg bg-transparent border border-gray-300 text-white outline-none"
+         className="w-full mb-3 px-3 py-2 rounded-lg bg-transparent border  border-gray-300 text-black outline-none"
         />
 
         {/* Days */}
@@ -77,7 +77,7 @@ const InstantBox = () => {
           name="days"
           value={formData.days}
           onChange={handleChange}
-          className="w-full mb-3 px-3 py-2 rounded-lg bg-transparent border border-gray-300 text-white"
+          className="w-full mb-3 px-3 py-2 rounded-lg bg-transparent border border-gray-300 text-black outline-none"
         >
           <option value="">Select Days</option>
           <option value="1">1 Day</option>
@@ -91,7 +91,7 @@ const InstantBox = () => {
           name="place"
           value={formData.place}
           onChange={handleChange}
-          className="w-full mb-4 px-3 py-2 rounded-lg bg-transparent border border-gray-300 text-white"
+          className="w-full mb-4 px-3 py-2 rounded-lg bg-transparent border border-gray-300 text-black"
           disabled={!formData.days}
         >
           <option value="">Select Place</option>
@@ -106,7 +106,7 @@ const InstantBox = () => {
         {/* Button */}
         <button
           type="submit"
-          className="w-full py-2 bg-purple-600 hover:bg-purple-700 rounded-lg text-white font-semibold"
+          className="w-full py-2  bg-[#a5bfef] hover:bg-[#8aa8d9] rounded-lg text-white font-semibold"
         >
           Submit
         </button>
