@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const ProvidedPackagesSchema = new mongoose.Schema({
   pic: String,
@@ -10,4 +10,5 @@ const ProvidedPackagesSchema = new mongoose.Schema({
   Map: String,
 });
 
-module.exports = mongoose.model("ProvidedPackage", ProvidedPackagesSchema);
+export default mongoose.models.ProvidedPackage ||
+  mongoose.model("ProvidedPackage", ProvidedPackagesSchema);

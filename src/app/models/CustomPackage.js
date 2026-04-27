@@ -1,13 +1,14 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const CustomPackageSchema = new mongoose.Schema({
-  Name: String ,
+  Name: String,
   CNIC: String,
   number: Number,
   days: Number,
   place: String,
   budget: Number,
-  preferpoints: [String]
+  preferpoints: [String],
 });
 
-module.exports = mongoose.model("CustomPackage", CustomPackageSchema);
+export default mongoose.models.CustomPackage ||
+  mongoose.model("CustomPackage", CustomPackageSchema);
