@@ -1,12 +1,19 @@
-const express = require("express");
-const router = express.Router();
-const Booking = require("../models/Booking");
 
-router.post("/", async (req, res) => {
+
+
+
+import Booking from "@/models/Booking";
+
+import dbConnect from "@/lib/db";
+
+export async function POST(req) {
   try {
-    const { Persons, days, CNIC, Name, place } = req.body;
+    await dbConnect();
 
-    const booking = new Booking({
+    const body = await req.json();
+    const { Persons, days, CNIC, Name, place } = body;
+
+    const booking = await Booking.create({
       Name,
       CNIC,
       Persons,
@@ -14,20 +21,20 @@ router.post("/", async (req, res) => {
       place,
     });
 
-    await booking.save();
-    res.status(201).json(booking);
+    return Response.json(booking, { status: 201 });
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    return Response.json({ message: error.message }, { status: 400 });
   }
-});
+}
 
-router.get("/", async (req, res) => {
+export async function GET() {
   try {
-    const bookings = await Booking.find();
-    res.status(200).json(bookings);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-});
+    await dbConnect();
 
-module.exports = router;
+    const bookings = await Booking.find();
+
+    return Response.json(bookings, { status: 200 });
+  } catch (error) {
+    return Response.json({ message: error.message }, { status: 500 });
+  }
+}
