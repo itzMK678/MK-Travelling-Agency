@@ -1,37 +1,49 @@
-const express = require("express");
-const router = express.Router();
-const CustomPackage = require("../models/CustomPackage");
+import { NextResponse } from "next/server";
+import dbConnect from "@/lib/db";
+import ProvidedPackage from "@/models/ProvidedPackages";
 
 // ✅ GET all packages
-router.get("/", async (req, res) => {
+export async function GET() {
   try {
-    const packages = await CustomPackage.find();
-    res.status(200).json(packages);
+    await dbConnect();
+
+    const data = await ProvidedPackage.find();
+
+    return NextResponse.json(data, { status: 200 });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    return NextResponse.json(
+      { message: error.message },
+      { status: 500 }
+    );
   }
-});
+}
 
 // ✅ POST create package
-router.post("/", async (req, res) => {
+export async function POST(request) {
   try {
-    const { number, days, place, budget, preferpoints, CNIC, Name } = req.body;
+    await dbConnect();
 
-    const customPackage = new CustomPackage({
+    const body = await request.json();
+
+    const { Name, description, days, Price, pinpoints, Map, pic } = body;
+
+    const providedPackage = new ProvidedPackage({
       Name,
-      CNIC,
-      number,
+      description,
       days,
-      place,
-      budget,
-      preferpoints,
+      Price,
+      pinpoints,
+      Map,
+      pic,
     });
 
-    await customPackage.save();
-    res.status(201).json(customPackage);
-  } catch (error) {
-    res.status(400).json({ message: error.message });
-  }
-});
+    await providedPackage.save();
 
-module.exports = router;
+    return NextResponse.json(providedPackage, { status: 201 });
+  } catch (error) {
+    return NextResponse.json(
+      { message: error.message },
+      { status: 400 }
+    );
+  }
+}
