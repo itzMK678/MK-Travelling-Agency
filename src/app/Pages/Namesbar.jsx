@@ -2,7 +2,15 @@ import React from 'react'
 
 const Namesbar = () => {
   return (
-    <div>Namebar</div>
+    <div>
+      <div>SWAT  </div>
+           <div> </div>
+
+                <div> </div>
+                     <div> </div>
+                          <div> </div>
+
+    </div>
   )
 }
 

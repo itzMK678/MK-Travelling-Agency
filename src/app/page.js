@@ -18,7 +18,7 @@ export default function Home() {
     <>
   <div className="relative">
       
-      {/* Floating Header */}
+    
       <div className="absolute top-0 left-0 w-full z-50 px-5 pt-3">
         <Header />
       </div>
