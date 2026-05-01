@@ -4,11 +4,11 @@ const Namesbar = () => {
   return (
     <div>
       <div>SWAT  </div>
-           <div> </div>
+           <div> Kalam</div>
 
-                <div> </div>
-                     <div> </div>
-                          <div> </div>
+                <div> Malamjabba  </div>
+                     <div> Gilgit</div>
+                          <div> osho </div>
 
     </div>
   )
