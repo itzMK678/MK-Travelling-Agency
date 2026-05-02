@@ -8,7 +8,7 @@ const Namesbar = () => {
 
                 <div> Malamjabba  </div>
                      <div> Gilgit</div>
-                          <div> osho </div>
+                          <div> Osho Forest </div>
 
     </div>
   )
