@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import PlaceCard from "../components/PlaceCard";
+import PlaceCard from "../../components/PlaceCard";
 
 const AllPacks = () => {
   const [search, setSearch] = useState("");
@@ -61,7 +61,7 @@ const AllPacks = () => {
   });
 
   return (
-    <div className="py-5 pb-10">
+    <div id="AllPacks" className=" py-5 pb-10">
       
       {/* Heading */}
       <div className="m-4 text-center">

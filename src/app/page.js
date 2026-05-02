@@ -5,7 +5,7 @@ import Favtpack from "./Pages/Favtpack";
 import CustomPack from "./Pages/CustomPack";
 import Footer from "./components/Footer";
 import Box from "./components/Box";
-import AllPacks from "./Pages/AllPacks";
+import AllPacks from "./Pages/allpacks/page";
 import FAQs from "./Pages/FAQs";
 import DetailPage from "./Pages/DetailPage";
 import Blog from "./Pages/Blog";
@@ -28,12 +28,16 @@ export default function Home() {
     <Favtpack />
     <CustomPack/>
     <Box/>
-    <Blog/>
-    <AllPacks/>
+   <section id="blogs"><Blog/></section> 
+    <section id="allpacks">
+  <AllPacks />
+</section>
     <Gallery/>
       
     <FAQs/>
+    <section id="contact">
   <ContactPage/>
+  </section>
     <Footer/>
    
     
