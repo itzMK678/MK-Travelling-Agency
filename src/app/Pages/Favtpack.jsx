@@ -64,10 +64,10 @@ const Favtpack = () => {
         fromAnim = { x: -200, opacity: 0 };
         toAnim = { x: 0, opacity: 1 };
       } else if (index === 1) {
-        fromAnim = { y: 200, opacity: 0 };
+        fromAnim = { y: 140, opacity: 0 };
         toAnim = { y: 0, opacity: 1 };
       } else {
-        fromAnim = { x: 200, opacity: 0 };
+        fromAnim = { x: 100, opacity: 0 };
         toAnim = { x: 0, opacity: 1 };
       }
 
@@ -77,15 +77,15 @@ const Favtpack = () => {
         scrollTrigger: {
           trigger: card,
           start: "top 90%",
-          end: "top 40%",
-          scrub: true, // 🔥 THIS is the magic
+          end: "top 50%",
+          scrub: true, 
         },
       });
     });
   }, []);
 
   return (
-    <div ref={sectionRef} className="py-20 pb-10">
+    <div ref={sectionRef} className="py-40 pb-10">
       {/* Heading */}
       <div className="m-4 text-center">
         <h1 className="section-title text-[45px] font-bold">
