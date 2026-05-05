@@ -13,11 +13,7 @@ const FAQs = () => {
       answer:
         "We offer travel packages, hotel bookings, and guided nature tours.",
     },
-    {
-      question: "What services do you offer?",
-      answer:
-        "We offer travel packages, hotel bookings, and guided nature tours.",
-    },
+    
     {
       question: "How can I book a trip?",
       answer:
