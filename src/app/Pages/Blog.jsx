@@ -16,7 +16,7 @@ const Blog = () => {
     // 🔹 LEFT CARD animation
     gsap.fromTo(
       leftRef.current,
-      { x: -150, opacity: 0 },
+      { x: 150, opacity: 0 },
       {
         x: 0,
         opacity: 1,

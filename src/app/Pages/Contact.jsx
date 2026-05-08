@@ -21,7 +21,7 @@ export default function ContactPage() {
     // 🔹 LEFT FORM animation
     gsap.fromTo(
       formRef.current,
-      { x: -150, opacity: 1 },
+      { x: 50, opacity: 1 },
       {
         x: 0,
         opacity: 1,
@@ -39,7 +39,7 @@ export default function ContactPage() {
     // 🔹 RIGHT INFO animation
     gsap.fromTo(
       infoRef.current,
-      { x: 150, opacity: 1 },
+      { x: -50, opacity: 1 },
       {
         x: 0,
         opacity: 1,
@@ -58,7 +58,7 @@ export default function ContactPage() {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen bg-gradient-to-b from-[#ffffff] to-[#d3efed] text-black px-4 md:px-12 py-16"
+      className="overflow-hidden min-h-screen bg-gradient-to-b from-[#ffffff] to-[#d3efed] text-black px-4 md:px-12 py-16"
     >
       {/* Heading */}
       <div className="text-center mb-12">

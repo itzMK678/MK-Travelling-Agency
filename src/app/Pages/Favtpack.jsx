@@ -61,13 +61,13 @@ const Favtpack = () => {
       let toAnim;
 
       if (index === 0) {
-        fromAnim = { x: -200, opacity: 0 };
+        fromAnim = { x: 200, opacity: 0 };
         toAnim = { x: 0, opacity: 1 };
       } else if (index === 1) {
         fromAnim = { y: 140, opacity: 0 };
         toAnim = { y: 0, opacity: 1 };
       } else {
-        fromAnim = { x: 100, opacity: 0 };
+        fromAnim = { x: -100, opacity: 0 };
         toAnim = { x: 0, opacity: 1 };
       }
 
@@ -87,7 +87,7 @@ const Favtpack = () => {
   return (
     <div ref={sectionRef} className="py-40 pb-10">
       {/* Heading */}
-      <div className="m-4 text-center">
+      <div className="overflow-hidden m-4 text-center">
         <h1 className="section-title text-[45px] font-bold">
           Our Best Offers
         </h1>

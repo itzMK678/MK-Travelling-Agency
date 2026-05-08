@@ -36,7 +36,7 @@ const FAQs = () => {
 <p className="text-center text-gray-500 mt-2">
   Frequently Asked Questions
 </p>
-    <div className="flex gap-8 max-w-3xl mx-auto py-16 px-4 space-y-10">
+    <div className="flex flex-wrap gap-8 max-w-3xl mx-auto py-16 px-4 space-y-10">
       
       {faqs.map((faq, index) => {
         const isActive = activeIndex === index;
