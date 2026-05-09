@@ -16,7 +16,7 @@ const Blog = () => {
     // 🔹 LEFT CARD animation
     gsap.fromTo(
       leftRef.current,
-      { x: 150, opacity: 0 },
+      { x: -150, opacity: 0 },
       {
         x: 0,
         opacity: 1,
@@ -50,7 +50,7 @@ const Blog = () => {
 
   return (
     <div ref={sectionRef} className="m-5">
-      <div className="rounded-2xl flex flex-col md:flex-row gap-3 p-6 bg-[#D0E3E1]">
+      <div className="overflow-hidden rounded-2xl flex flex-col md:flex-row gap-3 p-6 bg-[#D0E3E1]">
 
         {/* LEFT CARD */}
         <div
