@@ -16,7 +16,7 @@ const CustomPack = () => {
     // 🔹 LEFT card moves from left → center
     gsap.fromTo(
       leftRef.current,
-      { x: -anima150, opacity: 0 },
+      { x: -150, opacity: 0 },
       {
         x: 0,
         opacity: 1,
