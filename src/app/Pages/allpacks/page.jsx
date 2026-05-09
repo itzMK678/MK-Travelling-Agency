@@ -51,7 +51,6 @@ const AllPacks = () => {
     },
   ];
 
-  // ✅ Filter logic
   const filteredPlaces = places.filter((place) => {
     return (
       place.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -61,26 +60,24 @@ const AllPacks = () => {
   });
 
   return (
-    <div id="AllPacks" className=" py-5 pb-10">
+    <div id="AllPacks" className="py-5 pb-10">
       
       {/* Heading */}
       <div className="m-4 text-center">
-        <h1 className="text-[45px] font-bold">Our All Packages </h1>
+        <h1 className="text-[45px] font-bold">Our All Packages</h1>
         <p className="text-[15px] font-normal">
-         you can visit anywhere u like with us and we will make sure to give you the best experience and the best price for your trip
+          you can visit anywhere u like with us and we will make sure to give you the best experience and the best price for your trip
         </p>
       </div>
 
-      {/* 🔍 Search Bar */}
+      {/* Search Bar */}
       <div className="flex justify-center my-6">
         <input
           type="text"
           placeholder="Search by name, description, or price..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="w-[300px] md:w-[400px] px-4 py-2 
-          border border-gray-300 rounded-xl 
-          outline-none focus:ring-2 focus:ring-purple-500"
+          className="w-[300px] md:w-[400px] px-4 py-2 border border-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-purple-500"
         />
       </div>
 
