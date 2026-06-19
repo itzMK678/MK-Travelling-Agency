@@ -12,16 +12,24 @@ import Blog from "./Pages/Blog";
 import Gallery from "./Pages/Gallery";
 import ContactPage from "./Pages/Contact";
 import InstantBox from "./components/InstantBox";
+import MobHeader from "./components/MobHeader";
 
 export default function Home() {
   return (
     <>
-  <div className="relative">
+  <div className="relative overflow-hidden">
       
     
-      <div className="absolute top-0 left-0 w-full z-50 px-5 pt-3">
-        <Header />
-      </div>
+     <div className="hidden sm:block absolute top-0 left-0 w-full z-50 px-5 pt-3">
+  <Header />
+</div>
+
+{/* Mobile Header */}
+<div className="block sm:hidden absolute top-0 left-0 w-full z-50 px-5 pt-3">
+  <MobHeader />
+</div>
+
+     
       <HeroSection />
   
     </div>

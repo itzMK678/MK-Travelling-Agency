@@ -5,10 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import InstantBox from "./InstantBox";
 import { gsap } from "gsap";
-import { House } from 'lucide-react';
-import { Phone } from 'lucide-react';
-import { Rainbow } from 'lucide-react';
-import { Info } from 'lucide-react';
+
 const Header = () => {
   const boxRef = useRef(null);
   const rightRef = useRef(null);
@@ -49,7 +46,7 @@ const Header = () => {
 
   return (
     <>
-    <header
+    <div
       ref={boxRef}
       className=" relative w-full overflow-visible bg-white rounded-2xl px-8 py-4 flex justify-between items-center shadow-md"
     >
@@ -90,42 +87,11 @@ const Header = () => {
           </div>
         )}
       </nav>
-    </header>
-
-  <div className="sm:hide bg-white w-fit flex flex-col justify-center items-center border rounded-2xl border-gray-300 gap-4 shadow-md p-2">
- <Image
-          src="/SmallLogo.png"
-          alt="Logo"
-          width={50}
-          height={50} 
-          priority
-         className="h-auto w-fit"
-       />
-
-    <div className="cursor-pointer text-gray-500 flex flex-col justify-center items-center py-2 rounded-2xl border-gray-200 w-full hover:text-black hover:bg-gray-300 ">
-      <House />
-      Home
     </div>
 
-    <div className= "cursor-pointer text-gray-500 flex flex-col border-t justify-center items-center py-2 rounded-2xl border-gray-200 w-full hover:text-black hover:bg-gray-300">
-      <Rainbow />
-      Offers
-    </div>
-
-    <div className="cursor-pointer text-gray-500 flex flex-col justify-center items-center py-2 border-t rounded-b-2xl border-gray-200 w-full hover:text-black hover:bg-gray-300">
-      <Phone />
-      Contact
-    </div>
-
-    <div className="cursor-pointer text-gray-500 flex flex-col justify-center border-t border-gray-500 rounded-2xl items-center py-1 mt-5 w-full hover:text-black hover:bg-gray-300">
-      <Info />
-      About
-    </div>
-
-  </div>
 </>
 
   );
 };
 
-export default Header;
+export default Header; 

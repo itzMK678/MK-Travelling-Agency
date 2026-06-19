@@ -58,10 +58,10 @@ export default function ContactPage() {
   return (
     <section
       ref={sectionRef}
-      className="overflow-hidden min-h-screen bg-gradient-to-b from-[#ffffff] to-[#d3efed] text-black px-4 md:px-12 py-16"
+      className="overflow-hidden  min-h-screen bg-gradient-to-b from-[#ffffff] to-[#d3efed] text-black px-4 md:px-12 py-16"
     >
       {/* Heading */}
-      <div className="text-center mb-12">
+      <div className=" text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
           Contact Us
         </h1>
