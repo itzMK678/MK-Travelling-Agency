@@ -4,36 +4,16 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PlaceCard from "../components/PlaceCard";
-
+import { places } from "../../data/packages";
 gsap.registerPlugin(ScrollTrigger);
 
 const Favtpack = () => {
   const cardRefs = useRef([]);
   const sectionRef = useRef(null);
 
-  const places = [
-    {
-      id: 1,
-      name: "Mountain Escape",
-      description: "Beautiful peaceful mountains.",
-      price: 120,
-      image: "/Nature1.jpg",
-    },
-    {
-      id: 2,
-      name: "Beach Paradise",
-      description: "Relax near the ocean.",
-      price: 150,
-      image: "/Nature2.jpg",
-    },
-    {
-      id: 3,
-      name: "Beach Paradise",
-      description: "Relax near the ocean.",
-      price: 150,
-      image: "/Nature3.png",
-    },
-  ];
+  const featuredPlaces = places.filter(
+  (place) => place.special === true
+);
 
   useEffect(() => {
     // 🔹 Heading parallax
@@ -99,7 +79,7 @@ const Favtpack = () => {
 
       {/* Cards */}
       <div className="flex flex-wrap gap-5 justify-center">
-        {places.map((place, index) => (
+        {featuredPlaces.map((place, index) => (
           <div
             key={place.id}
             ref={(el) => (cardRefs.current[index] = el)}

@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { places } from "@/data/packages";
 
-const DetailPage = ({ params }) => {
+const Page = ({ params }) => {
   const id = Number(params.id);
 
   const pkg = places.find((place) => place.id === id);
@@ -97,4 +97,4 @@ const DetailPage = ({ params }) => {
   );
 };
 
-export default DetailPage;
+export default Page;

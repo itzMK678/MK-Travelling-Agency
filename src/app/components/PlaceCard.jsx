@@ -30,10 +30,10 @@ const PlaceCard = ({ place }) => {
 
       {/* Buttons */}
       <div className="flex justify-between gap-2 px-4 pb-4">
-        <Link href={`/places/${place.id}`} className="bg-black text-white px-4 py-2 rounded-full text-sm w-full hover:bg-gray-800 transition">
+        <Link href={`/DetailPage/${place.id}`} className="bg-black text-white px-4 py-2 rounded-full text-sm w-full hover:bg-gray-800 transition">
           View Details
         </Link>
-        <Link href={`/places/${place.id}/negotiate`} className="bg-gray-200 px-4 py-3 rounded-full text-sm w-full hover:bg-gray-300 transition">
+        <Link href={`/DetailPage/${place.id}/negotiate`} className="bg-gray-200 px-4 py-3 rounded-full text-sm w-full hover:bg-gray-300 transition">
           Negotiate
         </Link>
       </div>
