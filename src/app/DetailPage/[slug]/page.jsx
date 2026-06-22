@@ -2,17 +2,16 @@ import React from "react";
 import Image from "next/image";
 import { places } from "@/data/packages";
 
-const Page = ({ params }) => {
-console.log("params =", params);
-console.log("slug =", params.slug);
-console.log("id =", Number(params.slug));
+const Page = async ({ params }) => {
+  const { slug } = await params;
+  const id = Number(slug);
 
-const pkg = places.find((place) => {
-  console.log("place.id =", place.id);
-  return place.id === Number(params.slug);
-});
+  console.log("slug =", slug);
+  console.log("id =", id);
 
-console.log("pkg =", pkg);
+  const pkg = places.find((place) => place.id === id);
+
+  console.log("pkg =", pkg);
 
   if (!pkg) {
     return (
@@ -32,7 +31,7 @@ console.log("pkg =", pkg);
   return (
     <div className="min-h-screen flex flex-wrap-reverse bg-gradient-to-r from-white via-[#FFEABB] to-[#FBC3C1] p-6 md:p-10 font-sans">
       <div className="bg-white p-1 flex flex-wrap-reverse w-full rounded-2xl">
-        
+
         {/* LEFT: MAP */}
         <div className="w-full md:w-1/2 h-[400px] md:h-auto flex items-center justify-center rounded-l-3xl shadow-inner overflow-hidden">
           <iframe
@@ -47,7 +46,7 @@ console.log("pkg =", pkg);
 
         {/* RIGHT: DETAILS */}
         <div className="w-full md:w-1/2 rounded-r-3xl text-black p-6 md:p-8 shadow-2xl flex flex-col gap-6">
-          
+
           {/* PACKAGE NAME */}
           <div className="border border-black rounded-[8px] px-5 py-2">
             <span className="font-semibold text-lg uppercase tracking-wide">
@@ -57,7 +56,7 @@ console.log("pkg =", pkg);
 
           {/* CONTENT */}
           <div className="flex flex-1 gap-6">
-            
+
             {/* IMAGE */}
             <div className="w-3/5">
               <div className="relative h-[350px] rounded-2xl overflow-hidden border">
@@ -98,7 +97,6 @@ console.log("pkg =", pkg);
           </button>
 
         </div>
-
       </div>
     </div>
   );
