@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { places } from "@/data/packages";
+import BackButton from "@/app/components/BackButton";
 
 const Page = async ({ params }) => {
   const { slug } = await params;
@@ -29,76 +30,115 @@ const Page = async ({ params }) => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-wrap-reverse bg-gradient-to-r from-white via-[#FFEABB] to-[#FBC3C1] p-6 md:p-10 font-sans">
-      <div className="bg-white p-1 flex flex-wrap-reverse w-full rounded-2xl">
+   <div className="min-h-screen bg-[#eef3ee] flex items-center justify-center p-6 md:p-10">
+   <BackButton />
+  <div className="w-full max-w-6xl bg-white rounded-3xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
 
-        {/* LEFT: MAP */}
-        <div className="w-full md:w-1/2 h-[400px] md:h-auto flex items-center justify-center rounded-l-3xl shadow-inner overflow-hidden">
-          <iframe
-            src={pkg.map}
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            loading="lazy"
-            className="rounded-3xl"
-          ></iframe>
+    {/* LEFT SIDE */}
+    <div className="flex flex-col">
+
+      {/* MAP */}
+      <div className="relative h-[400px]">
+        <iframe
+          src={pkg.map}
+          className="w-full h-full"
+          loading="lazy"
+        />
+
+        <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-medium shadow">
+          📍 Location
         </div>
+      </div>
 
-        {/* RIGHT: DETAILS */}
-        <div className="w-full md:w-1/2 rounded-r-3xl text-black p-6 md:p-8 shadow-2xl flex flex-col gap-6">
+      {/* INFO GRID */}
+      <div className="p-4 m-3 w-full rounded-bl-lg  bg-[#e7efe9]">
+        <div className="grid grid-cols-2 gap-4 text-sm">
 
-          {/* PACKAGE NAME */}
-          <div className="border border-black rounded-[8px] px-5 py-2">
-            <span className="font-semibold text-lg uppercase tracking-wide">
-              {pkg.name}
-            </span>
+          <div className="bg-white p-3 rounded-xl">
+            <p className="text-gray-500">Location</p>
+            <p className="font-semibold">{pkg.location}</p>
           </div>
 
-          {/* CONTENT */}
-          <div className="flex flex-1 gap-6">
-
-            {/* IMAGE */}
-            <div className="w-3/5">
-              <div className="relative h-[350px] rounded-2xl overflow-hidden border">
-                <Image
-                  src={pkg.image}
-                  alt={pkg.name}
-                  fill
-                  className="object-cover"
-                />
-
-                <div className="absolute bottom-0 w-full bg-black/40 backdrop-blur-sm p-4 text-center">
-                  <p className="text-white text-sm italic">
-                    {pkg.detailDescription}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* DETAILS LIST */}
-            <div className="w-2/5 flex flex-col gap-5 py-2">
-              {points.map((item, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <div className="size-2 bg-gray-900 rounded-full" />
-                  <span className="text-sm font-light">
-                    {item}
-                  </span>
-                </div>
-              ))}
-            </div>
-
+          <div className="bg-white p-3 rounded-xl">
+            <p className="text-gray-500">Duration</p>
+            <p className="font-semibold">{pkg.days} Days</p>
           </div>
 
-          {/* BOOK BUTTON */}
-          <button className="w-full cursor-pointer flex justify-center items-center rounded-xl border border-gray-300 hover:bg-gray-100 active:scale-[0.98] transition-all py-3 shadow-md">
-            <span className="font-bold text-xl uppercase tracking-widest">
-              Book
-            </span>
-          </button>
+          <div className="bg-white p-3 rounded-xl">
+            <p className="text-gray-500">Price</p>
+            <p className="font-semibold">Rs. {pkg.price}</p>
+          </div>
+
+          <div className="bg-white p-3 rounded-xl">
+            <p className="text-gray-500">Rating</p>
+            <p className="font-semibold">⭐ {pkg.rating}</p>
+          </div>
 
         </div>
       </div>
+
     </div>
+
+    {/* RIGHT SIDE */}
+    <div className="p-6 md:p-8 flex flex-col gap-6">
+
+      <div className="text-xs uppercase tracking-widest text-green-700 font-semibold">
+        Nature Experience
+      </div>
+
+      <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
+        {pkg.name}
+      </h1>
+
+      <div className="relative h-[220px] w-full rounded-2xl overflow-hidden shadow-md">
+        <Image
+          src={pkg.image}
+          alt={pkg.name}
+          fill
+          className="object-cover"
+        />
+
+        <div className="absolute bottom-0 w-full bg-black/40 text-white text-sm p-3 italic">
+          {pkg.detailDescription}
+        </div>
+      </div>
+
+      <div className=" gap-2 flex flex-wrap text-xs">
+      
+    {pkg.placepoints.map((point, index) => (
+      <div
+        key={index}
+        className="flex items-center gap-3 bg-[#f3f7f3] p-3 rounded-xl"
+      >
+        <span className="w-6 h-6 flex items-center justify-center rounded-full bg-green-600 text-white text-xs">
+          {index + 1}
+        </span>
+
+        <span className="text-gray-700">{point}</span>
+      </div>
+    ))}
+ 
+        {/* <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full">
+          Curated Journey
+        </span>
+
+        <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full">
+          Trusted Guides
+        </span>
+
+        <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full">
+          Affordable
+        </span> */}
+      </div>
+
+      <button className="mt-auto bg-green-700 hover:bg-green-800 text-white py-3 rounded-xl font-semibold tracking-wide transition">
+        BOOK THIS EXPERIENCE
+      </button>
+
+    </div>
+
+  </div>
+</div>
   );
 };
 
