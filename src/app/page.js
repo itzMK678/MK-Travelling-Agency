@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 import Box from "./components/Box";
 import AllPacks from "./Pages/allpacks/page";
 import FAQs from "./Pages/FAQs";
-import DetailPage from "./Pages/DetailPage";
+
 import Blog from "./Pages/Blog";
 import Gallery from "./Pages/Gallery";
 import ContactPage from "./Pages/Contact";
