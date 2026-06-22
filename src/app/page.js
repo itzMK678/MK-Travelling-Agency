@@ -17,22 +17,11 @@ import MobHeader from "./components/MobHeader";
 export default function Home() {
   return (
     <>
-  <div className="relative overflow-hidden">
-      
-    
-     <div className="hidden sm:block absolute top-0 left-0 w-full z-50 px-5 pt-3">
-  <Header />
-</div>
-
-{/* Mobile Header */}
-<div className="block sm:hidden absolute top-0 left-0 w-full z-50 px-5 pt-3">
-  <MobHeader />
-</div>
-
+ 
      
       <HeroSection />
   
-    </div>
+    
     <Favtpack />
     <CustomPack/>
     <Box/>
