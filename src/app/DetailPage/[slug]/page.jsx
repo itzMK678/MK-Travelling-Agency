@@ -2,14 +2,13 @@ import React from "react";
 import Image from "next/image";
 import { places } from "@/data/packages";
 import BackButton from "@/app/components/BackButton";
-
+import Link from "next/link";
 const Page = async ({ params }) => {
   const { slug } = await params;
+  const message = encodeURIComponent(
+  
+);
   const id = Number(slug);
-
-  console.log("slug =", slug);
-  console.log("id =", id);
-
   const pkg = places.find((place) => place.id === id);
 
   console.log("pkg =", pkg);
@@ -118,23 +117,17 @@ const Page = async ({ params }) => {
       </div>
     ))}
  
-        {/* <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full">
-          Curated Journey
-        </span>
-
-        <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full">
-          Trusted Guides
-        </span>
-
-        <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full">
-          Affordable
-        </span> */}
+ 
       </div>
-
-      <button className="mt-auto bg-green-700 hover:bg-green-800 text-white py-3 rounded-xl font-semibold tracking-wide transition">
-        BOOK THIS EXPERIENCE
-      </button>
-
+      
+<Link
+  href={`https://wa.me/923326325661?text=Hello, I want to book the ${pkg.name} package.`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-auto block bg-green-700 hover:bg-green-800 text-white py-3 rounded-xl font-semibold tracking-wide transition text-center"
+>
+  BOOK THIS EXPERIENCE
+</Link>
     </div>
 
   </div>

@@ -162,7 +162,12 @@ Message: ${message}`
             <h3 className="text-xl font-semibold mb-4">
               Follow Us
             </h3>
-<div className="flex gap-4"> <a className="p-3 bg-white rounded-full hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer"> <FaFacebookF /> </a> <a className="p-3 bg-white rounded-full hover:bg-pink-500 hover:text-white transition duration-300 cursor-pointer"> <FaInstagram /> </a> <a className="p-3 bg-white rounded-full hover:bg-sky-500 hover:text-white transition duration-300 cursor-pointer"> <FaTwitter /> </a> <a className="p-3 bg-white rounded-full hover:bg-blue-700 hover:text-white transition duration-300 cursor-pointer"> <FaLinkedinIn /> </a> </div>
+<div className="flex gap-4"> 
+  <a className="p-3 bg-white rounded-full hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer"> <FaFacebookF /> </a> 
+  <a className="p-3 bg-white rounded-full hover:bg-pink-500 hover:text-white transition duration-300 cursor-pointer"> <FaInstagram /> </a>
+   <a className="p-3 bg-white rounded-full hover:bg-sky-500 hover:text-white transition duration-300 cursor-pointer"> <FaTwitter /> </a>
+    <a className="p-3 bg-white rounded-full hover:bg-blue-700 hover:text-white transition duration-300 cursor-pointer"> <FaLinkedinIn /> </a>
+     </div>
           </div>
         </div>
 

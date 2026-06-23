@@ -14,22 +14,35 @@ const InstantBox = () => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-      // reset place when days change
       ...(e.target.name === "days" && { place: "" }),
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
-  };
-
-  // ✅ Map days → places
   const placeOptions = {
     "1": ["Murree"],
     "3": ["Swat", "Murree"],
     "5": ["Hunza"],
     "7": ["Skardu"],
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const message = encodeURIComponent(
+`🧳 New Booking Request
+
+ Name: ${formData.name}
+CNIC: ${formData.cnic}
+Persons: ${formData.persons}
+Days: ${formData.days}
+Place: ${formData.place}
+
+Please confirm availability.`
+    );
+
+    const whatsappURL = `https://wa.me/923326325661?text=${message}`;
+
+    window.open(whatsappURL, "_blank");
   };
 
   return (
@@ -49,7 +62,7 @@ const InstantBox = () => {
           placeholder="Enter Name"
           value={formData.name}
           onChange={handleChange}
-          className="w-full mb-3 px-3 py-2 rounded-lg bg-transparent border  border-gray-300 text-black outline-none"
+          className="w-full mb-3 px-3 py-2 rounded-lg bg-transparent border border-gray-300 text-black outline-none"
         />
 
         {/* CNIC */}
@@ -69,7 +82,7 @@ const InstantBox = () => {
           placeholder="Enter Number of Persons"
           value={formData.persons}
           onChange={handleChange}
-         className="w-full mb-3 px-3 py-2 rounded-lg bg-transparent border  border-gray-300 text-black outline-none"
+          className="w-full mb-3 px-3 py-2 rounded-lg bg-transparent border border-gray-300 text-black outline-none"
         />
 
         {/* Days */}
@@ -86,7 +99,7 @@ const InstantBox = () => {
           <option value="7">7 Days</option>
         </select>
 
-        {/* Places (Dynamic) */}
+        {/* Places */}
         <select
           name="place"
           value={formData.place}
@@ -95,7 +108,6 @@ const InstantBox = () => {
           disabled={!formData.days}
         >
           <option value="">Select Place</option>
-
           {placeOptions[formData.days]?.map((place) => (
             <option key={place} value={place}>
               {place}
@@ -103,12 +115,12 @@ const InstantBox = () => {
           ))}
         </select>
 
-        {/* Button */}
+        {/* Submit */}
         <button
           type="submit"
-          className="w-full py-2  bg-[#a5bfef] hover:bg-[#8aa8d9] rounded-lg text-white font-semibold"
+          className="w-full py-2 bg-[#a5bfef] hover:bg-[#8aa8d9] rounded-lg text-white font-semibold"
         >
-          Submit
+          Send on WhatsApp
         </button>
       </form>
     </div>
