@@ -65,7 +65,7 @@ const Favtpack = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="py-40 pb-10">
+    <div ref={sectionRef} className="py-40 pb-10 overflow-hidden">
       {/* Heading */}
       <div className="overflow-hidden m-4 text-center">
         <h1 className="section-title text-[45px] font-bold">
