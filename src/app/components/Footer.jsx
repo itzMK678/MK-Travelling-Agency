@@ -66,7 +66,7 @@ const Footer = () => {
       {/* Bottom Section */}
       <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
         
-        <p>© 2026 Travel Co. All rights reserved.</p>
+        <p className="cursor-pointer"><a href="https://profile-psi-blush.vercel.app/"> © MKTravel&Co. DevelopedBy MamoonKhaliq.</a></p>
 
         {/* Social Icons */}
         <div className="flex gap-4">

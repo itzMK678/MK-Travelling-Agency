@@ -16,7 +16,7 @@ const PlaceCard = ({ place }) => {
           className="w-full h-[180px] object-cover"
         />
         <span className="absolute top-3 left-3 bg-white/80 text-sm px-3 py-1 rounded-full font-semibold">
-          ${place.price}
+          {place.price}Rs
         </span>
       </div>
 
