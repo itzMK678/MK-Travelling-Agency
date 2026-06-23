@@ -1,53 +1,69 @@
-import {React } from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { House } from 'lucide-react';
-import { Phone } from 'lucide-react';
-import { Rainbow } from 'lucide-react';
-import { Info } from 'lucide-react';
+import { House, Phone, Rainbow, Info } from "lucide-react";
+
 const MobHeader = () => {
+  const [show, setShow] = useState(false);
+
   return (
-  
-  <div className="bg-white w-fit flex flex-col justify-center items-center border rounded-2xl border-gray-300 gap-4 shadow-md p-2">
- <Image
-          src="/SmallLogo.png"
-          alt="Logo"
-          width={50}
-          height={50} 
-          priority
-         className="h-auto w-fit"
-       />
- 
-<div> <Link href="/" className= "  cursor-pointer text-gray-500 flex flex-col border-t justify-center items-center p-2 hover:rounded-2xl border-gray-200 w-full hover:text-black hover:bg-gray-300" > 
-      <House />
-      Home
-       </Link></div>
+    <div className="bg-white w-fit flex flex-col justify-center items-center border rounded-2xl border-gray-300 gap-4 shadow-md p-2">
+      
+      {/* Logo */}
+      <Image
+        src="/SmallLogo.png"
+        alt="Logo"
+        width={50}
+        height={50}
+        priority
+        className="h-auto w-fit cursor-pointer"
+        onClick={() => setShow(!show)}
+      />
 
-   
-     <div >
-    <Link href="#allpacks" className= "  cursor-pointer text-gray-500 flex flex-col border-t justify-center items-center p-2 hover:rounded-2xl border-gray-200 w-full hover:text-black hover:bg-gray-300" > 
-     <Rainbow />
-    Offers
-       </Link>
-    </div>
- 
-  <div >
-    <Link href="#contact" className= "  cursor-pointer text-gray-500 flex flex-col border-t justify-center items-center p-2 hover:rounded-2xl border-gray-200 w-full hover:text-black hover:bg-gray-300" > 
-     <Phone />
-      Contact
-       </Link>
-    </div>
-   
- <div >
-    <Link href="#blogs" className= "  cursor-pointer text-gray-500 flex flex-col border-t justify-center items-center p-2 hover:rounded-2xl border-gray-200 w-full hover:text-black hover:bg-gray-300" > 
-    <Info />
-      About
-       </Link>
-    </div>
- 
+      {/* Menu */}
+      <div
+        className={`flex flex-col justify-center items-center gap-2 overflow-hidden origin-top transition-all duration-500 ease-in-out ${
+          show
+            ? "max-h-[500px] opacity-100 scale-y-100"
+            : "max-h-0 opacity-0 scale-y-0"
+        }`}
+      >
+        <Link
+          href="/"
+          className="cursor-pointer text-gray-500 flex flex-col border-t justify-center items-center p-2 hover:rounded-2xl border-gray-200 w-full hover:text-black hover:bg-gray-300 transition-all duration-300"
+        >
+          <House />
+          Home
+        </Link>
 
-  </div>
-  )
-}
+        <Link
+          href="#allpacks"
+          className="cursor-pointer text-gray-500 flex flex-col border-t justify-center items-center p-2 hover:rounded-2xl border-gray-200 w-full hover:text-black hover:bg-gray-300 transition-all duration-300"
+        >
+          <Rainbow />
+          Offers
+        </Link>
 
-export default MobHeader
+        <Link
+          href="#contact"
+          className="cursor-pointer text-gray-500 flex flex-col border-t justify-center items-center p-2 hover:rounded-2xl border-gray-200 w-full hover:text-black hover:bg-gray-300 transition-all duration-300"
+        >
+          <Phone />
+          Contact
+        </Link>
+
+        <Link
+          href="#blogs"
+          className="cursor-pointer text-gray-500 flex flex-col border-t justify-center items-center p-2 hover:rounded-2xl border-gray-200 w-full hover:text-black hover:bg-gray-300 transition-all duration-300"
+        >
+          <Info />
+          About
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+export default MobHeader;
