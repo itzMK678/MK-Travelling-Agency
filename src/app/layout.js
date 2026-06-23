@@ -15,7 +15,7 @@ export const metadata = {
   title: "Mk Travel",
   description: "Make your travel dreams come true with our unforgettable packages. Explore the world with us and create memories that last a lifetime.",
    icons: {
-    icon: "/SmallLogo.png"
+    icon: "/Compass.png"
   },
 };
 
