@@ -7,35 +7,52 @@ import Header from "../components/Header";
 import MobHeader from "../components/MobHeader";
 
 const HeroSection = () => {
+  const sectionRef = useRef(null);
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
 
   useEffect(() => {
-    // 🔥 reset state first (IMPORTANT FIX)
-    gsap.set(titleRef.current, { opacity: 1, x: 0 });
-    gsap.set(subtitleRef.current, { opacity: 1, y: 0 });
+    const ctx = gsap.context(() => {
+      // Reset states
+      gsap.set(titleRef.current, {
+        x: 0,
+        opacity: 1,
+      });
 
-    const tl = gsap.timeline();
+      gsap.set(subtitleRef.current, {
+        y: 0,
+        opacity: 1,
+      });
 
-    tl.from(titleRef.current, {
-      x: -200,
-      opacity: 0,
-      duration: 1.2,
-      ease: "power3.out",
-    }).from(
-      subtitleRef.current,
-      {
-        y: 40,
+      const tl = gsap.timeline();
+
+      tl.from(titleRef.current, {
+        x: -200,
         opacity: 0,
-        duration: 1,
-        ease: "power2.out",
-      },
-      "-=0.5"
-    );
+        duration: 1.2,
+        ease: "power3.out",
+      }).from(
+        subtitleRef.current,
+        {
+          y: 40,
+          opacity: 0,
+          duration: 1,
+          ease: "power2.out",
+        },
+        "-=0.5"
+      );
+    }, sectionRef);
+
+    return () => {
+      ctx.revert(); // cleanup on unmount
+    };
   }, []);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative h-screen w-full overflow-hidden"
+    >
       {/* Background Image */}
       <Image
         src="/HeroSection.png"
@@ -45,16 +62,17 @@ const HeroSection = () => {
         className="object-cover"
       />
 
-      {/* Header */}
+      {/* Desktop Header */}
       <div className="hidden sm:block fixed top-0 left-0 w-full px-6 py-4 z-50">
         <Header />
       </div>
 
+      {/* Mobile Header */}
       <div className="block sm:hidden fixed top-0 left-0 w-full px-4 py-4 z-50">
         <MobHeader />
       </div>
 
-      {/* Hero Text */}
+      {/* Hero Content */}
       <div
         ref={titleRef}
         className="absolute bottom-10 left-5 md:left-10 text-white"
@@ -71,8 +89,9 @@ const HeroSection = () => {
 
         <div ref={subtitleRef}>
           <p className="mt-4 text-base sm:text-lg md:text-xl text-gray-200 max-w-2xl leading-relaxed">
-            Explore breathtaking destinations, discover hidden gems,
-            and create unforgettable memories with carefully curated travel experiences.
+            Explore breathtaking destinations, discover hidden gems, and
+            create unforgettable memories with carefully curated travel
+            experiences.
           </p>
         </div>
       </div>

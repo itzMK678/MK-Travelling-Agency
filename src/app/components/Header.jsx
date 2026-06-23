@@ -8,68 +8,91 @@ import { gsap } from "gsap";
 import { usePathname } from "next/navigation";
 
 const Header = () => {
-  const boxRef = useRef(null);
-  const rightRef = useRef(null);
-  const leftRef = useRef(null);
+  const containerRef = useRef(null);
+  const logoRef = useRef(null);
+  const navRef = useRef(null);
 
   const [isInstantBoxOpen, setIsInstantBoxOpen] = useState(false);
 
   const pathname = usePathname();
-useEffect(() => {
-  const tl = gsap.timeline();
 
-  // ONLY reset animation targets (not container)
-  gsap.set(leftRef.current, { x: 0, opacity: 1 });
-  gsap.set(rightRef.current, { x: 0, opacity: 1 });
-  gsap.set(boxRef.current, { y: 0, opacity: 1 });
+  useEffect(() => {
+    if (!containerRef.current) return;
 
-  tl.from(boxRef.current, {
-    y: -200,
-    opacity: 0,
-    duration: 1.2,
-    ease: "power3.out",
-  })
-    .from(leftRef.current, {
-      x: -80,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-    })
-    .from(
-      rightRef.current,
-      {
-        x: 80,
+    const ctx = gsap.context(() => {
+      gsap.set(logoRef.current, {
+        x: 0,
+        opacity: 1,
+      });
+
+      gsap.set(navRef.current, {
+        x: 0,
+        opacity: 1,
+      });
+
+      gsap.set(containerRef.current, {
+        y: 0,
+        opacity: 1,
+      });
+
+      const tl = gsap.timeline();
+
+      tl.from(containerRef.current, {
+        y: -100,
         opacity: 0,
-        duration: 1,
+        duration: 0.8,
         ease: "power3.out",
-      },
-      "<"
-    );
-}, [pathname]);
+      })
+        .from(
+          logoRef.current,
+          {
+            x: -60,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power3.out",
+          },
+          "-=0.4"
+        )
+        .from(
+          navRef.current,
+          {
+            x: 60,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power3.out",
+          },
+          "<"
+        );
+    }, containerRef);
+
+    return () => {
+      ctx.revert(); // cleanup all animations
+    };
+  }, [pathname]);
 
   const linkStyle =
     "relative text-[#223553] font-light p-2 text-[18px] transition-all duration-300 ease-in-out hover:text-[#1a2a44] hover:scale-105";
 
   return (
-    <div
-      ref={boxRef}
+    <header
+      ref={containerRef}
       className="relative w-full overflow-visible bg-white rounded-2xl px-8 py-4 flex justify-between items-center shadow-md"
     >
       {/* Logo */}
-      <div ref={leftRef}>
+      <div ref={logoRef}>
         <Image
           src="/logo.png"
           alt="Logo"
           width={130}
           height={130}
           priority
-          className="h-auto w-fit"
+          className="w-auto h-auto"
         />
       </div>
 
       {/* Navigation */}
       <nav
-        ref={rightRef}
+        ref={navRef}
         className="relative flex gap-8 text-sm font-medium items-center"
       >
         <Link href="/" className={linkStyle}>
@@ -96,12 +119,12 @@ useEffect(() => {
         </button>
 
         {isInstantBoxOpen && (
-          <div className="absolute z-10 top-10 right-0">
+          <div className="absolute top-12 right-0 z-50">
             <InstantBox />
           </div>
         )}
       </nav>
-    </div>
+    </header>
   );
 };
 
