@@ -2,9 +2,9 @@
 
 
 
-import Booking from "@/models/Booking";
+import Booking from "../../models/Booking";
 
-import dbConnect from "@/lib/db";
+import dbConnect from "../../lib/db";
 
 export async function POST(req) {
   try {

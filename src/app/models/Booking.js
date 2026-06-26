@@ -1,12 +1,12 @@
-// import mongoose from "mongoose";
+import mongoose from "mongoose";
 
-// const BookingSchema = new mongoose.Schema({
-//   Name: String,
-//   CNIC: String,
-//   Persons: Number,
-//   days: Number,
-//   place: String,
-// });
+const BookingSchema = new mongoose.Schema({
+  Name: String,
+  CNIC: String,
+  Persons: Number,
+  days: Number,
+  place: String,
+});
 
-// export default mongoose.models.Booking ||
-//   mongoose.model("Booking", BookingSchema);
+export default mongoose.models.Booking ||
+  mongoose.model("Booking", BookingSchema);

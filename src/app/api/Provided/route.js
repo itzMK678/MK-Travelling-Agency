@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import dbConnect from "@/lib/db";
-import ProvidedPackage from "@/models/ProvidedPackages";
+import dbConnect from "../../lib/db";
+import ProvidedPackage from "../../models/ProvidedPackages";
 
 // ✅ GET all packages
 export async function GET() {

@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
-import dbConnect from "@/lib/db"; // your DB connection
-import CustomPackage from "@/models/CustomPackage";
 
+import CustomPackage from "../../models/CustomPackage";
+
+import dbConnect from "../../lib/db";
 // ✅ GET all packages
 export async function GET() {
   try {
