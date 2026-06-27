@@ -10,3 +10,4 @@ const BookingSchema = new mongoose.Schema({
 
 export default mongoose.models.Booking ||
   mongoose.model("Booking", BookingSchema);
+  // this is for the booking model which will be used to store the booking data in the database.

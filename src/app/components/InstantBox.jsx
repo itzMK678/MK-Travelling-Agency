@@ -3,12 +3,14 @@ import React, { useState } from "react";
 
 const InstantBox = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    cnic: "",
+    Name: "",
+    CNIC: "",
     days: "",
     place: "",
-    persons: "",
+    Persons: "",
   });
+
+
 
   const handleChange = (e) => {
     setFormData({
@@ -25,25 +27,67 @@ const InstantBox = () => {
     "7": ["Skardu"],
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+
+//     const message = encodeURIComponent(
+// ` New Booking Request
+
+//  Name: ${formData.name}
+// CNIC: ${formData.cnic}
+// Persons: ${formData.persons}
+// Days: ${formData.days}
+// Place: ${formData.place}
+
+// // Please confirm availability.`
+//     );
+
+//     const whatsappURL = `https://wa.me/923326325661?text=${message}`;
+
+//     window.open(whatsappURL, "_blank");
+//   };
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+    try {
+    const res = await fetch("/api/Booking", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await res.json();
+
+   if (!res.ok) {
+    alert(data.message);
+    return;
+}
+
+    alert("Booking Saved!");
 
     const message = encodeURIComponent(
 `🧳 New Booking Request
 
- Name: ${formData.name}
-CNIC: ${formData.cnic}
-Persons: ${formData.persons}
+Name: ${formData.Name}
+CNIC: ${formData.CNIC}
+Persons: ${formData.Persons}
 Days: ${formData.days}
 Place: ${formData.place}
 
 Please confirm availability.`
     );
 
-    const whatsappURL = `https://wa.me/923326325661?text=${message}`;
+    window.open(
+      `https://wa.me/923326325661?text=${message}`,
+      "_blank"
+    );
 
-    window.open(whatsappURL, "_blank");
-  };
+  } catch (error) {
+    console.log(error);
+  }
+};
 
   return (
     <div className="w-full flex justify-center items-center py-10">
@@ -58,9 +102,9 @@ Please confirm availability.`
         {/* Name */}
         <input
           type="text"
-          name="name"
+          name="Name"
           placeholder="Enter Name"
-          value={formData.name}
+          value={formData.Name}
           onChange={handleChange}
           className="w-full mb-3 px-3 py-2 rounded-lg bg-transparent border border-gray-300 text-black outline-none"
         />
@@ -68,9 +112,9 @@ Please confirm availability.`
         {/* CNIC */}
         <input
           type="text"
-          name="cnic"
+          name="CNIC"
           placeholder="Enter CNIC"
-          value={formData.cnic}
+          value={formData.CNIC}
           onChange={handleChange}
           className="w-full mb-3 px-3 py-2 rounded-lg bg-transparent border border-gray-300 text-black outline-none"
         />
@@ -78,9 +122,9 @@ Please confirm availability.`
         {/* Persons */}
         <input
           type="text"
-          name="persons"
+          name="Persons"
           placeholder="Enter Number of Persons"
-          value={formData.persons}
+          value={formData.Persons}
           onChange={handleChange}
           className="w-full mb-3 px-3 py-2 rounded-lg bg-transparent border border-gray-300 text-black outline-none"
         />

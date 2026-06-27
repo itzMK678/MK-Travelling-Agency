@@ -12,3 +12,4 @@ const CustomPackageSchema = new mongoose.Schema({
 
 export default mongoose.models.CustomPackage ||
   mongoose.model("CustomPackage", CustomPackageSchema);
+  // For Creating package according to need of person

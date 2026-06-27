@@ -53,7 +53,7 @@ const CustomPack = () => {
       <div className="rounded-2xl overflow-hidden flex flex-col md:flex-row gap-3 p-6 bg-[#e9eeee]">
 
         {/* LEFT CARD */}
-        <div
+        {/* <div
           ref={leftRef}
           className="bg-[#e9eeee] rounded-2xl p-6 flex-1 flex flex-col items-center"
         >
@@ -66,24 +66,24 @@ const CustomPack = () => {
           <h2 className="text-[42px] dynapuff text-gray-800 leading-snug">
             Customize Trip
           </h2>
-        </div>
+        </div> */}
 
         {/* CENTER IMAGE */}
-        <div className="flex-1 rounded-2xl overflow-hidden relative">
+        {/* <div className="flex-1 rounded-2xl overflow-hidden relative">
           <Image
             src="/Nature1.jpg"
             alt="Location Image"
             fill
             className="object-cover"
           />
-        </div>
+        </div> */}
 
         {/* RIGHT CARD */}
         <div
           ref={rightRef}
           className="bg-gradient-to-b from-[#cfe0df] to-[#d3efed] rounded-2xl p-6 flex-1 flex flex-col justify-between"
         >
-          <div>
+          {/* <div>
             <h3 className="text-xl font-semibold text-gray-800">
               Customize your Trip
             </h3>
@@ -96,10 +96,56 @@ const CustomPack = () => {
 
           <button className="mt-4 bg-black text-white px-4 py-2 rounded-full w-fit hover:bg-gray-800 transition">
             Explore Now
-          </button>
+          </button> */}
+           <div className="w-full flex justify-center items-center py-10">
+            <h1>Give Detail</h1>
+  <form className="flex flex-wrap gap-4">
+
+    <input
+      className="w-80 border border-black p-2 rounded"
+      type="text"
+      name="name"
+      placeholder="Enter Your Name"
+    />
+
+    <input
+      className="w-80 border border-black p-2 rounded"
+      type="tel"
+      name="contact"
+      placeholder="Contact Number"
+    />
+
+    <input
+      className="w-80 border border-black p-2 rounded"
+      type="number"
+      name="persons"
+      placeholder="Number of Persons"
+    />
+
+    <input
+      className="w-80 border border-black p-2 rounded"
+      type="number"
+      name="days"
+      placeholder="Trip Days"
+    />
+
+    <input
+      className="w-80 border border-black p-2 rounded"
+      type="text"
+      name="place"
+      placeholder="Destination"
+    />
+
+    <button className="bg-black text-white py-2 rounded">
+      Submit
+    </button>
+
+  </form>
+</div>
         </div>
 
       </div>
+     
     </div>
   );
 };

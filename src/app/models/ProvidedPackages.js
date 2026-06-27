@@ -11,4 +11,5 @@ const ProvidedPackagesSchema = new mongoose.Schema({
 });
 
 export default mongoose.models.ProvidedPackage ||
-  mongoose.model("ProvidedPackage", ProvidedPackagesSchema);
+  mongoose.model("ProvidedPackage", ProvidedPackagesSchema); 
+  // that we already have 
