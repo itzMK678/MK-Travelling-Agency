@@ -1,13 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React, { useState,useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const CustomPack = () => {
+  const [active, setActive] = useState(false);
   const sectionRef = useRef(null);
   const leftRef = useRef(null);
   const rightRef = useRef(null);
@@ -52,11 +53,17 @@ const CustomPack = () => {
     <div ref={sectionRef} className="m-5">
       <div className="rounded-2xl overflow-hidden flex flex-col md:flex-row gap-3 p-6 bg-[#e9eeee]">
 
-        {/* LEFT CARD */}
-        {/* <div
+        {/* LEFT CARD */} 
+         <div
           ref={leftRef}
-          className="bg-[#e9eeee] rounded-2xl p-6 flex-1 flex flex-col items-center"
-        >
+         className={`flex-1 rounded-2xl p-6
+transition-all duration-700 ease-in-out
+${
+  active
+    ? "opacity-0 scale-95 -translate-x-10 pointer-events-none absolute"
+    : "opacity-100 scale-100 translate-x-0 relative"
+}`}>
+
           <h3 className="text-[42px] dynapuff font-semibold text-gray-800">
             you
           </h3>
@@ -66,24 +73,31 @@ const CustomPack = () => {
           <h2 className="text-[42px] dynapuff text-gray-800 leading-snug">
             Customize Trip
           </h2>
-        </div> */}
+        </div>
 
-        {/* CENTER IMAGE */}
-        {/* <div className="flex-1 rounded-2xl overflow-hidden relative">
+        {/* CENTER IMAGE  */}
+        <div
+className={`flex-1 rounded-2xl overflow-hidden relative
+transition-all duration-700
+${
+active
+? "opacity-0 scale-90"
+: "opacity-100 scale-100"
+}`}
+>
           <Image
             src="/Nature1.jpg"
             alt="Location Image"
             fill
             className="object-cover"
           />
-        </div> */}
+        </div>
 
         {/* RIGHT CARD */}
         <div
           ref={rightRef}
-          className="bg-gradient-to-b from-[#cfe0df] to-[#d3efed] rounded-2xl p-6 flex-1 flex flex-col justify-between"
-        >
-          {/* <div>
+         className=' bg-gradient-to-b from-[#cfe0df] to-[#d3efed] rounded-2xl p-6 flex-1 flex-col justify-between'>
+          <div className={` ${active ? 'hidden' : 'block'} `}>
             <h3 className="text-xl font-semibold text-gray-800">
               Customize your Trip
             </h3>
@@ -92,53 +106,72 @@ const CustomPack = () => {
               Choose from a wide range of destinations, activities, and
               accommodations to create a personalized travel experience.
             </p>
-          </div>
+          
 
-          <button className="mt-4 bg-black text-white px-4 py-2 rounded-full w-fit hover:bg-gray-800 transition">
+          <button onClick={() => setActive(!active)}
+           className="mt-4 bg-black text-white px-4 py-2 rounded-full w-fit hover:bg-gray-800 transition">
             Explore Now
-          </button> */}
-           <div className="w-full flex justify-center items-center py-10">
-            <h1>Give Detail</h1>
-  <form className="flex flex-wrap gap-4">
+          </button>
+</div>
+           <div 
+className={`flex-1 gap-2 rounded-2xl overflow-hidden relative
+transition-all duration-700
+${
+active
+? "opacity-100 block "
+: "opacity-0 hidden "
+}`}>
+           <div><h1 className="text-center text-3xl text-[#7fa8a6] font-extrabold mb-5">Give Detail</h1></div> 
+
+  <form  className="flex flex-col gap-3 items-center">
+
 
     <input
-      className="w-80 border border-black p-2 rounded"
+      className="w-80 border border-[#7fa8a6] p-2 rounded"
       type="text"
       name="name"
       placeholder="Enter Your Name"
     />
 
     <input
-      className="w-80 border border-black p-2 rounded"
+      className="w-80 border border-[#7fa8a6] p-2 rounded"
       type="tel"
       name="contact"
       placeholder="Contact Number"
     />
 
     <input
-      className="w-80 border border-black p-2 rounded"
+      className="w-80 border border-[#7fa8a6] p-2 rounded"
       type="number"
       name="persons"
       placeholder="Number of Persons"
     />
 
     <input
-      className="w-80 border border-black p-2 rounded"
+      className="w-80 border border-[#7fa8a6] p-2 rounded"
       type="number"
       name="days"
       placeholder="Trip Days"
     />
 
     <input
-      className="w-80 border border-black p-2 rounded"
+      className="w-80 border border-[#7fa8a6] p-2 rounded"
       type="text"
       name="place"
       placeholder="Destination"
     />
 
-    <button className="bg-black text-white py-2 rounded">
-      Submit
-    </button>
+        <div className="flex flex-1 gap-3" >
+         <button className="bg-black w-[150px]  text-white p-2 rounded ">
+           Submit
+         </button>
+         <button className="bg-black text-white w-[150px] p-2 rounded"
+           type="button"
+           onClick={() => setActive(false)}
+           >
+           Back
+         </button>
+        </div>
 
   </form>
 </div>
