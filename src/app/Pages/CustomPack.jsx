@@ -57,11 +57,11 @@ const CustomPack = () => {
          <div
           ref={leftRef}
          className={`flex-1 rounded-2xl p-6
-transition-all duration-700 ease-in-out
+         transition-all duration-700 ease-in-out
 ${
   active
-    ? "opacity-0 scale-95 -translate-x-10 pointer-events-none absolute"
-    : "opacity-100 scale-100 translate-x-0 relative"
+    ? "opacity-0 pointer-events-none"
+    : "opacity-100  "
 }`}>
 
           <h3 className="text-[42px] dynapuff font-semibold text-gray-800">
@@ -114,8 +114,8 @@ active
           </button>
 </div>
            <div 
-className={`flex-1 gap-2 rounded-2xl overflow-hidden relative
-transition-all duration-700
+className={`flex flex-1 gap-2 rounded-2xl overflow-hidden relative
+transition-all duration-2000 ease-in-out
 ${
 active
 ? "opacity-100 block "
