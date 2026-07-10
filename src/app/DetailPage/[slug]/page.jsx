@@ -35,11 +35,10 @@ const Page = async ({ params }) => {
 
     {/* LEFT SIDE */}
     <div className="flex flex-col">
-
       {/* MAP */}
       <div className="relative h-[400px]">
         <iframe
-          src={pkg.map}
+          src={pkg.map}  alt="Map is loading"
           className="w-full h-full"
           loading="lazy"
         />

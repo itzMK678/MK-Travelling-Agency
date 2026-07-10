@@ -56,13 +56,8 @@ const CustomPack = () => {
         {/* LEFT CARD */} 
          <div
           ref={leftRef}
-         className={`flex-1 rounded-2xl p-6
-         transition-all duration-700 ease-in-out
-${
-  active
-    ? "opacity-0 pointer-events-none"
-    : "opacity-100  "
-}`}>
+         className="rounded-2xl p-6 flex-1 flex flex-col justify-center
+  ">
 
           <h3 className="text-[42px] dynapuff font-semibold text-gray-800">
             you
@@ -74,7 +69,7 @@ ${
             Customize Trip
           </h2>
         </div>
-
+  
         {/* CENTER IMAGE  */}
         <div
 className={`flex-1 rounded-2xl overflow-hidden relative
@@ -109,12 +104,12 @@ active
           
 
           <button onClick={() => setActive(!active)}
-           className="mt-4 bg-black text-white px-4 py-2 rounded-full w-fit hover:bg-gray-800 transition">
+           className="cursor-pointer mt-4 bg-black text-white px-4 py-2 rounded-full w-fit hover:bg-gray-800 transition">
             Explore Now
           </button>
 </div>
            <div 
-className={`flex flex-1 gap-2 rounded-2xl overflow-hidden relative
+className={`flex flex-1 flex-col gap-2 rounded-2xl overflow-hidden relative
 transition-all duration-2000 ease-in-out
 ${
 active
@@ -162,10 +157,10 @@ active
     />
 
         <div className="flex flex-1 gap-3" >
-         <button className="bg-black w-[150px]  text-white p-2 rounded ">
+         <button className="cursor-pointer bg-black w-[150px]  text-white p-2 rounded ">
            Submit
          </button>
-         <button className="bg-black text-white w-[150px] p-2 rounded"
+         <button className="cursor-pointer bg-black text-white w-[150px] p-2 rounded"
            type="button"
            onClick={() => setActive(false)}
            >
