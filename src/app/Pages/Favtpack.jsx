@@ -72,7 +72,7 @@ const Favtpack = () => {
           Our Best Offers
         </h1>
         <p className="text-[15px] font-normal">
-          there are some of our most popular destinations in different seasons.
+          There are some of our most popular destinations in different seasons.
           Where most of people like to go in specific season
         </p>
       </div>

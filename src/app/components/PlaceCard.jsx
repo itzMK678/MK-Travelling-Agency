@@ -7,7 +7,7 @@ const PlaceCard = ({ place }) => {
   "Hello, I want to negotiate the price of "
 );
   return (
-    <div className="bg-white rounded-2xl shadow-md overflow-hidden w-[300px] hover:shadow-xl transition-all duration-300">
+    <div className="bg-white rounded-2xl shadow-md overflow-hidden h-[340px] w-[300px] hover:shadow-xl transition-all duration-300">
       
       {/* Image Section */}
       <div className="relative">
@@ -24,7 +24,7 @@ const PlaceCard = ({ place }) => {
       </div>
 
       {/* Content */}
-      <div className="p-4">
+      <div className="p-4 h-[100px]">
         <h3 className="text-lg font-bold">{place.name}</h3>
         <p className="text-gray-500 text-sm mt-1">
           {place.description}
@@ -32,7 +32,7 @@ const PlaceCard = ({ place }) => {
       </div>
 
       {/* Buttons */}
-      <div className="flex justify-between gap-2 px-4 pb-4">
+      <div className="flex justify-between gap-2 px-4 ">
         <Link href={`/DetailPage/${place.id}`} className="bg-black text-white px-4 py-3 rounded-full text-sm w-full hover:bg-gray-800 transition">
           View Details
         </Link>
